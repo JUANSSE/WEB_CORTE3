@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
+    <link href="../imagenes/Anonimous.png" rel="shortcut icon" sizes="196x196">
+    <link type="text/css" rel="stylesheet" href="../CSS/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="../CSS/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div id="contenido" class="m2">
+                    <header id="header" class=" red lighten-1">
+                        Registro Usuarios
+                    </header>
+                    <form id="enviar-formulario" action="#" class="col s10 offset-s1">
+                        <div class="row">
+                        </div>  
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="nombre" type="text" >
+                                <label for="nombre">Nombre:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="apellido" type="text" >
+                                <label for="apellido">Apellido:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix grey-text">account_circle</i>
+                                <input id="ccusuario" type="text" >
+                                <label for="ccusuario">Usuario</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix grey-text">date_range</i>
+                                <input id="f_nac" type="text" class="datepicker">
+                                <label for="f_nac">Fecha de nacimiento</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix grey-text">contact_mail</i>
+                                <input id="email" type="email">
+                                <label for="email">Email:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix grey-text">contact_phone</i>
+                                <input id="telefono" type="number" >
+                                <label for="telefono">Telefono</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="input-field col s6">
+                                <i class="material-icons prefix grey-text">vpn_key</i>
+                                <input id="ccpaswd" type="password" >
+                                <label for="ccpaswd">Contraseña</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="ccpaswd2" type="password" >
+                                <label for="ccpaswd2">Verificar Contraseña</label>
+                            </div> 
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="browser-default" onchange="getDepartamentos(this)">
+                                <option value="">Selecciona Una Region</option>
+                                <option value="Región Eje Cafetero - Antioquia">Región Eje Cafetero - Antioquia</option>
+                                <option value="Región Centro Oriente">Región Centro Oriente</option>
+                                <option value="Región Caribe">Región Caribe</option>
+                                <option value="Región Llano">Región Llano</option>
+                                <option value="Región Centro Sur">Región Centro Sur</option>
+                                <option value="Región Pacífico">Región Pacífico</option>
+                              </select>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="browser-default" id="departamento" onchange="getDepartment(this), getMunicipios(this)">
+                                <option value="">Selecciona Departamento</option>
+                              </select>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="browser-default" id="municipio" onchange="getmuni(this)">
+                                <option value="">Selecciona Municipio</option>
+                              </select>
+                        </div>
+                        
+                        <div class="row" id="loaders">
+                            <img id="spinner" src="../imagenes/spinner.gif" width="150">
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <button id="enviar" class="btn waves-effect waves-light  red lighten-1" type="submit" name="action">Enviar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                            <div class="col s6">
+                                <button id="resetBtn" class="btn waves-effect waves-light light-blue darken-2" type="submit">Reset
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> 
+                </div> <!--.contenido-->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script src="../js/app3.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+</html>

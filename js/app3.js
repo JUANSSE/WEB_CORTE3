@@ -2,6 +2,7 @@
 const nombre = document.getElementById('nombre');
 const apellido = document.getElementById('apellido');
 const usuario = document.getElementById('ccusuario');
+const fecha = document.getElementById('f_nac');
 const password = document.getElementById('ccpaswd');
 const email = document.getElementById('email');
 const telefono = document.getElementById('telefono');
@@ -24,6 +25,7 @@ function eventListeners() {
      nombre.addEventListener('blur', validarCampo);
      apellido.addEventListener('blur', validarCampo);
      usuario.addEventListener('blur', validarCampo);
+     fecha.addEventListener('blur', validarCampo);
      password.addEventListener('blur', validarCampo);
      verpassword.addEventListener('blur', validarCampo);
      telefono.addEventListener('blur', validarCampo); 
@@ -46,10 +48,6 @@ function inicioApp() {
 
 // Validación de los campos del formulario
 function validarCampo() {
-    
-    
-     // Se valida la longitud del texto y que no este vacio
-     validarLongitud(this);
 
     // Validar nombre
      if(this.id === 'nombre') {
@@ -60,6 +58,12 @@ function validarCampo() {
      if(this.id === 'apellido') {
           validarApellido(this);
      }
+
+     // Validar fecha_nac
+     if(this.id === 'f_nac') {
+          validarFecha(this);
+     }
+
       // Validar email
      if(this.id === 'email') {
           validarEmail(this);
@@ -87,7 +91,7 @@ function validarCampo() {
     
      let errores = document.querySelectorAll('.error');
 
-     if(nombre.value !== '' && apellido.value !== '' && usuario.value !== '' && password.value !== '' && verpassword.value !== '' && telefono.value !== '' && email.value !== '') {
+     if(nombre.value !== '' && apellido.value !== '' && usuario.value !== '' && fecha.value !== '' && password.value !== '' && verpassword.value !== '' && telefono.value !== '' && email.value !== '') {
           if(errores.length === 0) {
                btnEnviar.disabled = false;
           }
@@ -126,17 +130,7 @@ function enviarFormulario(e) {
      e.preventDefault();
 }
 
-// Verifica la longitud del texto en los campos y coloca un borde verde para correcto y rojo para reportar un error
-function validarLongitud(campo) {
 
-     if(campo.value.length > 0 ) {
-          campo.style.borderBottomColor = 'green';
-          campo.classList.remove('error');
-     } else {
-          campo.style.borderBottomColor = 'red';
-          campo.classList.add('error');
-     }
-}
 
 // Validaciones y restricciones con respecto a los requerimientos de cada campo
 
@@ -191,6 +185,18 @@ function validarUsuario(campo) {
           campo.style.borderBottomColor = 'red';
           campo.classList.add('error');
           alert('Campo incorrecto, por favor asegúrese de ingresar un usuario con almenos 10 caracteres de longitud y máximo 25 caracteres.\nRecuerde que solo se permite usar caracteres alfanuméricos en su nickname');
+     }
+}
+
+function validarFecha(campo) {
+
+     if(fecha.value.length >= 0) {
+          campo.style.borderBottomColor = 'green';
+          campo.classList.remove('error');
+     } else {
+          campo.style.borderBottomColor = 'red';
+          campo.classList.add('error');
+          alert('Campo incorrecto, por favor asegúrese de ingresar una fecha de nacimiento');
      }
 }
 

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Nueva Registro a Persona</title>
+</h:head>
+<h:body
+	style="background-color:#faebd7; font-family: 'Helvetica Neue', 'Arial', sans-serif">
+	<h:panelGrid cellspacing="20" border="1" style="widht:1500">
+		<h:form>
+			<h:panelGrid columns="2" cellspacing="20"
+				style="background-color:#eaeaea; text-align: left; font-size:20px">
+				<f:facet name="header">
+					<h:outputText value="Nuevo Registro de Persona" style="font-size: 30px"></h:outputText>
+				</f:facet>
+
+				<h:outputText value="ID:"></h:outputText>
+				<h:inputText value="#{persona.id}" style="widht:150px"></h:inputText>
+
+				<h:outputText value="Nombre:"></h:outputText>
+				<h:inputText value="#{persona.nombre}"></h:inputText>
+
+				<h:outputText value="Apellido:"></h:outputText>
+				<h:inputText value="#{persona.apellido}"></h:inputText>
+
+				<h:outputText value="Tipo Documento:"></h:outputText>
+				<h:inputText value="#{persona.tipo_documento}"></h:inputText>
+
+				<h:outputText value="Documento:"></h:outputText>
+				<h:inputText value="#{persona.documento}"></h:inputText>
+
+				<h:outputText value="ID del Lugar de Residencia:"></h:outputText>
+				<h:inputText value="#{persona.id_lugar_residencia}"></h:inputText>
+
+				<h:outputText value="Fecha de Nacimiento:"></h:outputText>
+				<h:inputText value="#{persona.fecha_nacimiento}"></h:inputText>
+
+				<h:outputText value="Email:"></h:outputText>
+				<h:inputText value="#{persona.email}"></h:inputText>
+
+				<h:outputText value="Telefono:"></h:outputText>
+				<h:inputText value="#{persona.telefono}"></h:inputText>
+
+				<h:outputText value="Usuario:"></h:outputText>
+				<h:inputText value="#{persona.usuario}"></h:inputText>
+
+				<h:outputText value="Password:"></h:outputText>
+				<h:inputText value="#{persona.password}"></h:inputText>
+
+				<f:facet name="footer">
+					<h:commandButton value="Guardar" action="#{personaBean.guardar(persona)}" style="height:45px; widht:120px; background-color:#85B7FF; border-radius:5px; margin-left: 150px; font-size:20px"></h:commandButton>
+				</f:facet>
+			</h:panelGrid>
+		</h:form>
+	</h:panelGrid>
+</h:body>
+</html>
